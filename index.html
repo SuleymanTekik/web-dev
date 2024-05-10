@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>süleyman tekik ödev</title>
+    <title>Süleyman Tekik Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ccc;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        section {
+            padding: 20px;
+            display: none;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .slider-container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            display: none; /* Başlangıçta gizli */
+        }
+        .slider-content {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            flex: 0 0 auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .slide-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .slide-nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
 </head>
 <body>
-    a
+
+<header>
+    <h1>Süleyman Tekik</h1>
+</header>
+
+<nav>
+    <a href="#hakkimda" onclick="showSection('hakkimda')">Hakkımda</a>
+    <a href="#egitim" onclick="showSection('egitim')">Eğitim Bilgileri</a>
+    <a href="#gezilecek" onclick="showSection('gezilecek')">Gezilecek Yerler</a>
+</nav>
+
+<section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <p>Ben Süleyman Tekik. Afyonkarahisar'da doğdum. 2002 doğumluyum. Hobilerim arasında futbol oynamak, bilgisayar oyunu oynamak, basketbol oynamak, dizi izlemek, arkadaşlarımla vakit geçirmek ve ailemle vakit geçirmek yer alır.</p>
+</section>
+
+<section id="egitim">
+    <h2>Eğitim Bilgileri</h2>
+    <p>İlkokulu Ayşegül Ersoy İlköğretim okulunda okudum.Ortaokulda Maraşal Fevzi Çakmak Ortaokuluna geçiş yaptım.Teog sınavından 480 puan alarak Ali Çağlar Anadolu Lisesi'ni kazandım.Yks sınavında 38134. olarak Sakarya Üniversitesi bilgisayar mühendisliği bölümünü kazandım.</p>
+</section>
+
+<section id="gezilecek">
+    <h2>Gezilecek Yerler</h2>
+    <p>Afyonkarahisar küçük bir il olmasına rağmen birçok gezilecek yere sahiptir.Bunlardan bazıları şunlardır:</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Süleyman Tekik</p>
+</footer>
+
+<div class="slider-container">
+    <div class="slider-content">
+        <div class="slide">
+            <img src="resim1.jpg" alt="Afyonkarahisar Kalesi">
+        </div>
+        <div class="slide">
+            <img src="resim2.jpg" alt="Afyonkarahisar Müzesi">
+        </div>
+        <div class="slide">
+            <img src="resim3.jpg" alt="Zafer Anıtı">
+        </div>
+        <div class="slide">
+            <img src="resim4.jpg" alt="Frig Vadisi">
+        </div>
+    </div>
+    <div class="slide-nav">
+        <button onclick="goToSlide(0)">Afyonkarahisar Kalesi</button>
+        <button onclick="goToSlide(1)">Afyonkarahisar Müzesi</button>
+        <button onclick="goToSlide(2)">Zafer Anıtı</button>
+        <button onclick="goToSlide(3)">Frig Vadisi</button>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+
+    function goToSlide(index) {
+        slideIndex = index;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        const sliderContent = document.querySelector('.slider-content');
+        const slides = document.querySelectorAll('.slide');
+        const slideWidth = slides[0].offsetWidth;
+
+        sliderContent.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+    }
+
+    function showSection(id) {
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById(id).style.display = 'block';
+        if (id === 'gezilecek') {
+            document.querySelector('.slider-container').style.display = 'block';
+        } else {
+            document.querySelector('.slider-container').style.display = 'none';
+        }
+    }
+</script>
+
 </body>
 </html>
