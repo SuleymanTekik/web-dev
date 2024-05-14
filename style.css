@@ -53,13 +53,15 @@
         .slider-content {
             display: flex;
             transition: transform 0.5s ease;
+            background-size: cover;
         }
         .slide {
             flex: 0 0 100%;
+            background-size: 300px 300px;
         }
         img {
-            width: 100%;
-            height: auto;
+            width: 1800px;
+            height: 600px;
         }
         .slide-nav {
             position: absolute;
@@ -67,11 +69,47 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
+           
         }
         .slide-nav button {
             background: none;
             border: none;
             cursor: pointer;
-            margin: 0 5px;
+            margin: 1px
+            
         }
-  
+        .p1{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        .p2{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+        }
+        .p3{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        .p4{
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        .miras{
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+        .parag1 {
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+        .parag2{
+            font-size: 80px;
+        }
+        .box{
+            background: url(resimler/afyon.jpg);
+            background-size: 100% 100%;
+        }
